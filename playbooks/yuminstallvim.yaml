@@ -1,0 +1,8 @@
+---
+  - name: Install vim
+    hosts: app
+    tasks:
+      - name: Install vim
+        yum:
+          name: vim
+          state: latest
