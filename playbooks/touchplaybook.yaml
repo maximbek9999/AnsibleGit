@@ -1,0 +1,10 @@
+---
+  - name: This is touch testfile2 playbook for development group
+    hosts: development
+    tasks:
+      - name: touch testfile2 playbook for development group
+        file:
+          path: /tmp/testfile2
+          state: touch
+
+          mode: '764'
