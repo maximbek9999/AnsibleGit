@@ -1,0 +1,22 @@
+# List of fruits
+fruits:
+  - apple
+  - banana
+  - orange
+
+# List of vegetables
+vegetables:
+  - cucamber
+  - potato
+  - onion
+
+# Grocery list
+ item:
+   fruits:
+     - apple
+     - banana
+     - orange
+   vegetables:
+     - cucumber
+     - potato
+     - onion  

@@ -1,0 +1,8 @@
+---
+  - name: This is mkdir playbook for production group in prodinventory
+    hosts: production
+    tasks:
+      - name: mkdir testfolder5 playbook for production group in /tmp in prodinventory
+        file:
+          path: /tmp/testfolder5
+          state: absent
