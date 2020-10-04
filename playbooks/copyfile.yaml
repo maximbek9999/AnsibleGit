@@ -1,0 +1,9 @@
+---
+  - name: copy index.html file into application server
+    hosts: app
+    tasks:
+      - name: copy index.html file into application server
+        copy:
+          src: /tmp/index.html
+          dest: /var/www/html/
+          

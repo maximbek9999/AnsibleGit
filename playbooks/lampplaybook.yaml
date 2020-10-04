@@ -6,7 +6,7 @@
         yum:
           name: '*'
           state: latest
-
+        
       - name: install lamp without mysql on application
         when: ansible_hostname == "application"
         yum:
@@ -15,6 +15,14 @@
             - php 
             - php-mysql
           state: latest
+
+      - name: Start service httpd if not started
+        when: ansible_hostname == "application"
+        systemd:
+          state: started 
+          enabled: yes
+          name: httpd
+
       - name: install php on database
         when: ansible_hostname == "database"
         yum:
