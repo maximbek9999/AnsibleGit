@@ -4,4 +4,4 @@
     tasks:
       - name: change group name
         hostname:
-          name: APP
+          name: app
