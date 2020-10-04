@@ -7,5 +7,11 @@
           name: Jill
           uid: 2102
           comment: LeadEngineer
-          group: LeadEngineer 
+          group: LeadEngineer
+      - name: adding user to system
+        user:
+          name: Ahmad
+          uid: 2105
+          comment: Professor
+          group: Professor 
 
