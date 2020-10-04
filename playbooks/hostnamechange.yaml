@@ -1,0 +1,7 @@
+---
+  - name: change group name
+    hosts: app
+    tasks:
+      - name: change group name
+        hostname:
+          name: APP
