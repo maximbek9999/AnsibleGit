@@ -1,0 +1,13 @@
+---
+  - name: changing multiple hostnames
+    hosts: development
+    tasks:
+      - name: changing hostname "app"
+        when: ansible_hostname == "testapp"
+        hostname: 
+          name: application
+
+      - name: changing hostname "db"
+        when: ansible_hostname == "testdb"
+        hostname: 
+          name: database

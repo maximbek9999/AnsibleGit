@@ -1,0 +1,25 @@
+---
+  - name: install lamp without mysql on application
+    hosts: development
+    tasks:
+      - name: update packages on servers
+        yum:
+          name: '*'
+          state: latest
+
+      - name: install lamp without mysql on application
+        when: ansible_hostname == "application"
+        yum:
+          name: 
+            - httpd
+            - php 
+            - php-mysql
+          state: latest
+      - name: install php on database
+        when: ansible_hostname == "database"
+        yum:
+          name: 
+            - mariadb-server 
+            - mariadb
+          state: latest
+
