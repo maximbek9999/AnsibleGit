@@ -1,0 +1,11 @@
+---
+  - name: adding user to system
+    hosts: development
+    tasks:
+      - name: adding user to system
+        user:
+          name: Jill
+          uid: 2102
+          comment: LeadEngineer
+          group: LeadEngineer 
+

@@ -1,0 +1,12 @@
+---
+  - name: group add
+    hosts: development
+    tasks:
+      - name: group add
+        group:
+          name: "{{ item }}"
+          state: present
+        loop:
+          - SystemAdmin
+          - SystemEngineer
+          - LeadEngineer

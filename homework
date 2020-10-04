@@ -1,0 +1,6 @@
+ansible -i inventory/devinventory all -m setup -a "filter=ansible_distribution*"
+ansible -i inventory/devinventory development -m user -a "name=anna uid=2040"
+ansible -i inventory/devinventory development -m command -a "id anna"
+ansible -i inventory/devinventory development -m command -a "df" >> /tmp/diskusage
+ansible -i inventory/devinventory development -m command -a "free" >> /tmp/freememory
+
