@@ -1,0 +1,6 @@
+---
+  - name: This playbook to reboot newly added servers
+    hosts: all
+    tasks:
+      - name: to reboot newly added servers
+        reboot:
