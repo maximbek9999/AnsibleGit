@@ -1,0 +1,4 @@
+ansible -i inventory/newhosts dev-servers -m ping
+ansible -i inventory/newhosts dev-servers -m setup -a "filter=ansible_distribution*"
+ansible -i inventory/newhosts dev-servers -m command -a "df -h"
+ansible -i inventory/newhosts dev-servers -m command -a "free -h"

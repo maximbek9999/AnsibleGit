@@ -1,0 +1,8 @@
+---
+  - name: Yum update
+    hosts: dev-servers
+    tasks:
+      - name: Yum update
+        yum:
+          name: '*'
+          state: latest 
