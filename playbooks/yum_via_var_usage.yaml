@@ -1,0 +1,13 @@
+---
+  - name: Variable for hosts is "group" which you specify after playbook command 
+    hosts: "{{ group }}"
+    vars_files:
+      - "../variables/values-variables.yaml"
+    tasks:
+      - name: Ping Servers
+        ping:
+      
+      - name: Variale for installaiton "package"
+        yum:
+          name: "{{ package }}"
+          state: latest

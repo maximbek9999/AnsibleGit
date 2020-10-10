@@ -1,7 +1,13 @@
-# Ignore inventory folder
+# Ignore folders
 inventory
 *inventory
 inventory*
 ansiblefacts
 ansiblefacts*
 *ansiblefacts
+*variables
+variables*
+variables
+*var
+var*
+var

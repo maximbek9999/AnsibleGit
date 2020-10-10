@@ -16,3 +16,4 @@
       - name: run 'debug' to read command output
         debug: 
           var: command_output
+      

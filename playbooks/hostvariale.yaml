@@ -1,0 +1,6 @@
+---
+  - name: Host variable
+    hosts: "{{ group }}"
+    tasks:
+      - name: Ping Servers
+        ping:
