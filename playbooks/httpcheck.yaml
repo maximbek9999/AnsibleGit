@@ -1,32 +1,10 @@
 ---
-  - name: this playbook will check the status of HTTPD service on CentOS6
-    hosts: host1
-    gather_facts: yes
-    tasks:
-      - name: Checkking HTTPD status on CenOS
-        when: ansible_distribution_major_version == "6"
-        service_facts:
-      - debug:
-          var: ansible_facts.services.httpd.state
-      - name: Verify if Apache up and running
-        assert:
-          that:
-            - ansible_facts.services.httpd.state
-          fail_msg: "httpd on CentOs6 is down..."
-          success_msg: "httpd on CentOS6 up and running successfully"
+  - name: Check hhtpd service
+    hosts: development
+    tasks:
+      - name:
+        yum:
+          list: httpd
+        register: yum_output
 
-  - name: this playbook will check the status of HTTPD service on CentOS7
-    hosts: host2
-    gather_facts: yes
-    tasks:
-      - name: Checkking HTTPD status on CenOS7
-        when: ansible_distribution_major_version == "7"
-        service_facts:
-      - debug:
-          msg: "{{ ansible_facts.services['httpd.service'].state }}"
-      - name: Verify if Apache up and running
-        assert:
-          that:
-            - "'{{ ansible_facts.services['httpd.service'].state }}' == 'running'"
-          fail_msg: "httpd on CenOS7 is down..."
-          success_msg: "httpd on CentOS7 up and running successfully"
+      - debug: var=yum_out 
