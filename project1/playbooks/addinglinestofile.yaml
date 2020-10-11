@@ -1,0 +1,23 @@
+---
+  - name: creating empty file
+    hosts: "{{ group }}"
+    gather_facts: "{{ gather_facts }}"
+    vars_files:
+      - "../variables/values-variables.yaml"
+    tasks:
+      - name: creating empty file 
+        file:
+          path: /tmp/{{ path }}
+          state: "{{ state }}"
+          mode: "{{ mode }}"
+      - name: add line
+        lineinfile: 
+          path: /tmp/{{ path }}
+          line: "{{ line }}
+          create: yes
+      - name: add multiple lines
+        blockinfile:
+          path: /tmp/{{ path }}
+          block: |
+            {{ block }}
+           
