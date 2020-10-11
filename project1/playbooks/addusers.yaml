@@ -1,0 +1,17 @@
+---
+  - name: user management
+    hosts: "{{ group }}"
+    gather_facts: "{{ gather_facts }}"
+    vars_files:
+      - "../variables/values-variables.yaml"
+    tasks:
+      - name: user1
+        user:
+          name: "{{ username1 }}"
+          uid: "{{ uid1 }}"
+    
+      - name: user2
+        user:
+          name: "{{ username2 }}"
+          uid: "{{ uid2 }}"
+          
