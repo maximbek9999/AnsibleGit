@@ -1,3 +1,11 @@
-# Variable set
-# key "vegetable" equals "carrot"
-vegetable: carrot 
+---
+  - name: Variable for hosts is "group" which you specify after playbook command 
+    hosts: "{{ group }}"
+    tasks:
+      - name: Ping Servers
+        ping:
+      
+      - name: Variale for installaiton "package"
+        yum:
+          name: "{{ package }}"
+          state: latest
