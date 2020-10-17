@@ -1,0 +1,9 @@
+---
+  - name: run jobs on dev servers
+    hosts: "{{ group }}"
+    gather_facts: "{{ gather_facts }}"
+    vars_files: 
+      - "../variables/dev-tasks-variables.yaml"
+    tasks:
+      - include: ../tasks/freedisk.yaml
+      - include: ../tasks/ping.yaml

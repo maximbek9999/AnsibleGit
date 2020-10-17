@@ -1,0 +1,5 @@
+- name: free disk space check
+  command: df -h 
+  register: freedisk
+- debug: 
+  var: freedisk.stdout
