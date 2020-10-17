@@ -1,0 +1,53 @@
+---
+  - name: Lamp stack
+    gather_facts: no
+    hosts: lampserver
+    tasks:
+      - name: update packages on servers
+        yum:
+          name: '*'
+          state: latest
+
+      - name: Install Apache
+        yum: 
+          name: httpd
+          state: latest
+      
+      - name: Start service httpd if not started
+        systemd:
+          state: started 
+          enabled: yes
+          name: httpd
+      
+      - name: Install mariadb.server and mariadb
+        yum:
+          name:
+            - mariadb-server
+            - mariadb
+          state: latest
+      
+      - name: start mariadb
+        systemd:
+          name: mariadb
+          state: started
+          enabled: yes
+      
+      - name: Install php and php-mysql
+        yum:
+          name: 
+            - php
+            - php-mysql
+            - php-gd
+          state: latest
+      
+      - name: Restart httpd and mariadb
+        systemd:
+          name: httpd
+          name: mariadb
+          name: httpd
+          state: restarted
+
+      - name: Create a new database with name wordpress
+        community.mysql.mysql_db:
+          name: wordpress
+          state: present

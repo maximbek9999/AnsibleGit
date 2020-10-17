@@ -2,7 +2,7 @@
   - name: This is ping playbook
     hosts: "{{ group }}"
     vars_files:
-      - "../variables/ping-values.yaml"
+      - "../variables/values-variables.yaml"
     tasks: 
       - name: Ping hosts
         ping: 

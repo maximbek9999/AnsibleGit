@@ -13,8 +13,9 @@
       - name: add line
         lineinfile: 
           path: /tmp/{{ path }}
-          line: "{{ line }}
+          line: "{{ line }}"
           create: yes
+
       - name: add multiple lines
         blockinfile:
           path: /tmp/{{ path }}
