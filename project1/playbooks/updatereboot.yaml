@@ -9,4 +9,5 @@
         yum:
           name: "{{ updating_packages }}"
           state: latest
-      
+      - name:
+        reboot:
