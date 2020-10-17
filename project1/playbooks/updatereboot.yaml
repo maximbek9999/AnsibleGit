@@ -10,4 +10,5 @@
           name: "{{ updating_packages }}"
           state: latest
       - name:
+        when: ansible_distribution_major_version == "7"
         reboot:

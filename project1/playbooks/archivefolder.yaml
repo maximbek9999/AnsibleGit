@@ -1,0 +1,10 @@
+---
+  - name: update reboot servers
+    hosts: "{{ group }}"
+    vars_files: "../variables/updatereboot_variable.yaml"
+    tasks:
+    - name: Compress directory  y /var/log/ into /tmp/log.gz
+      archive:
+        path: "{{ folder_path }}"
+        dest: /tmp/{{ folder_name }}
+        format: gz
