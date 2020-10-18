@@ -1,0 +1,34 @@
+---
+  - name: wordpress
+    gather_facts: no
+    hosts: wordpress
+    tasks:    
+      
+      - name:
+        copy:
+          remote_src: true
+          src: /var/www/html/wp-config-sample.php
+          dest: /var/www/html/wp-config.php
+        
+      - name: create upload directory inwordpress wp-content
+        file:
+          path: /var/www/html/wp-content/uploads
+          state: directory
+          mode: '660'
+      
+      - name: Give ownership to an existing file
+        file:
+          path: /var/www/html/wp-config.php
+          owner: apache
+          group: apache
+      
+      - name: install MySQL-python
+        yum:
+          name: MySQL-python
+          state: latest
+
+      - name: Create a new database 'wordpress'
+        mysql_db:
+          name: wordpress
+          state: present
+        
