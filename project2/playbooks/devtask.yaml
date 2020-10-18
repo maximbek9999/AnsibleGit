@@ -5,6 +5,7 @@
     vars_files: 
       - "../variables/dev-tasks-variables.yaml"
     tasks:
-      - include: ../tasks/ping.yaml
-      - include: ../tasks/apacheinstallation.yaml
-      - include: ../tasks/freedisk.yaml
+      #- include: ../tasks/ping.yaml
+      #- include: ../tasks/apacheinstallation.yaml
+      #- include: ../tasks/freedisk.yaml
+      - include: ../tasks/copyfiles.yaml
