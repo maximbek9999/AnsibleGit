@@ -1,0 +1,15 @@
+---
+  - name: linein
+    hosts: wordpress
+    tasks:
+      - name: create file
+        file: 
+          path: /tmp/newfile
+          state: touch
+      - name: linein file
+        blockinfile:
+          path: /tmp/newfile
+          block: | 
+            1
+            2
+            3

@@ -1,7 +1,9 @@
 ---
   - name: wordpress
-    gather_facts: no
-    hosts: wordpress
+    gather_facts: "{{ gather_facts }}"
+    hosts: "{{ group }}"
+    vars_files: 
+      - '../variables/variables'
     tasks:    
       
       - name:
@@ -31,4 +33,16 @@
         mysql_db:
           name: wordpress
           state: present
-        
+
+      - name: Removes all anonymous user accounts
+        mysql_user:
+          name: ''
+          host_all: yes
+          state: absent
+      
+      - name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
+        mysql_user:
+          name: wordpressuser
+          password: redhat
+          priv: '*.*:ALL,GRANT'
+          state: present
