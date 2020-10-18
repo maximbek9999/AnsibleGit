@@ -1,0 +1,4 @@
+- name:
+  command: mv /tmp/index.html /root/AnsibleGit/project2/files/
+  
+    

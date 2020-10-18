@@ -1,7 +1,7 @@
 - name:
   when: ansible_distribution_version  == "7.8"
   copy:
-    src: /tmp/index.html
+    src: /root/AnsibleGit/project2/files/index.html
     dest: /var/www/html/
     owner: apache
     group: apache

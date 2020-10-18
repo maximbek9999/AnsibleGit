@@ -1,11 +1,11 @@
 - name: apache installation
-  when: ansible_distribution_version  == "7.8"
+  when: ansible_distribution_version  == "6.9"
   yum:
     name: httpd
     state: latest
   
 - name: Start apache
-  when: ansible_distribution_version  == "7.8"
-  systemd:
+  when: ansible_distribution_version  == "6.9"
+  service:
     name: httpd
     state: started
