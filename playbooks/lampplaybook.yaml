@@ -23,7 +23,7 @@
           enabled: yes
           name: httpd
 
-      - name: install php on database
+      - name: install mysql on database
         when: ansible_hostname == "database"
         yum:
           name: 
